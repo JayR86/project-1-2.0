@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 let weather = {
     apiKey: "debedf3ec770a6134bafe0d07ed54e45",
     fetchWeather: function (city) {
@@ -50,4 +48,4 @@ document
             weather.search();
         }
     });
->>>>>>> richard-branch
+
