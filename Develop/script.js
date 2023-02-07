@@ -50,6 +50,7 @@ let weather = {
     },
 };
 
+
 document.querySelector(".searchButton").addEventListener("click", function () {
     weather.search();
 
@@ -65,12 +66,12 @@ document
 
 var map = L.map("map").setView([38.5816, -121.4944], 11);
 
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+L.tileLayer("https://a.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=ce6aa4d18f9e44b5a6a0bf8a5cba5636", {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
-// COME BACK TO
+
 let marker, circle, zoomed = false;
 
 navigator.geolocation.watchPosition(function (position) {
@@ -102,3 +103,22 @@ navigator.geolocation.watchPosition(function (position) {
         alert("An error occurred while retrieving the location.");
     }
 });
+
+var searchBar = document.querySelector(".search-bar");
+
+function setLocation() {
+    var storage = localStorage.getItem("city");
+    if (storage) {
+        searchBar.value = storage;
+        weather.search();
+    }
+}
+
+setLocation();
+
+function saveLocation() {
+    var text = searchBar.value;
+    localStorage.setItem("city", text);
+}
+
+document.querySelector(".saveButton").addEventListener("click", saveLocation);
