@@ -64,7 +64,7 @@ document
         }
     });
 
-var map = L.map("map").setView([38.5816, -121.4944], 11);
+var map = L.map("map").setView([38.5449, -121.7405], 14);
 
 L.tileLayer("https://a.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=ce6aa4d18f9e44b5a6a0bf8a5cba5636", {
     maxZoom: 19,
@@ -73,36 +73,6 @@ L.tileLayer("https://a.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=ce6aa
 
 
 let marker, circle, zoomed = false;
-
-navigator.geolocation.watchPosition(function (position) {
-    const lat = position.coords.latitude;
-    const lng = position.coords.longitude;
-    const accuracy = position.coords.accuracy;
-
-    if (marker) {
-        map.removeLayer(marker);
-        map.removeLayer(circle);
-    }
-
-    marker = L.marker([lat, lng]).addTo(map);
-    circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
-
-    if (!zoomed) {
-        zoomed = map.fitBounds(circle.getBounds());
-    }
-
-    map.setView([lat, lng]);
-
-    map.fitBounds(circle.getBounds());
-
-}, function (error) {
-    console.error(error);
-    if (error.code === error.PERMISSION_DENIED) {
-        alert("Failed to retrieve location. Please enable location services.");
-    } else {
-        alert("An error occurred while retrieving the location.");
-    }
-});
 
 var searchBar = document.querySelector(".search-bar");
 
