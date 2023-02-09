@@ -24,7 +24,7 @@
   <div class="box has-background-success-light">
     <h1 class="font is-size-1 ">Velocity</h1>
   </div class="mx-auto mt-1">
-  <div class="box columns mx-auto mt-1" style="width: 30%;">
+  <div class="box columns mx-auto mt-1 searchDiv">
     <div class="field column">
       <label class="label">Where to?: </label>
       <div class="control">
@@ -35,12 +35,12 @@
     <button class="button has-background-success-light my-auto searchButton">Let's Ride!</button>
   </div>
   <Section class="rowBoat">
-    <div class="box columns mr-2 mt-5 widgets" style="height: 550px; width: 30%;">
+    <div class="box columns ml-2 mr-2 mt-5 widgets" style="height: 550px;">
       <h2 id="mapText" class="font is-size-2 widgets">Map</h2>
       <div id="map" style="width: 100%; height: calc(92% - 30px);"></div>
     </div>
 
-    <div class="box mt-5 ml-2 mr-2 widgets" style="height: 550px; width: 30%;">
+    <div class="box columns mt-5 ml-2 mr-2 widgets" style="height: 550px;">
       <h2 class="font is-size-2" style="text-align: center;">Forecast</h2>
       <section class="box columns mt-5 mx-auto city"></section>
       <section class="box columns mt-5 mx-auto description"></section>
@@ -51,8 +51,8 @@
     </div>
 
   </section>
-  <div class="mx-auto" style="width:10%;">
-    <button class="button has-background-success-light font saveButton">Save Route</button>
+  <div class="mx-auto svBtn">
+    <button class="button has-background-success-light mx-auto font saveButton">Save Route</button>
   </div>
 </body>
 <script src="./Develop/script.js"></script>
