@@ -13,6 +13,7 @@
 .widgets {
   text-align: center;
   justify-content: center;
+  width: 30%;
 }
 
 #map {
@@ -25,4 +26,31 @@
   top: auto;
   left: auto;
   text-align: center;
+}
+.searchDiv {
+  width: 40%;
+}
+.svBtn {
+  width: 10%;
+}
+
+@media screen and (max-width: 577px) {
+  .searchDiv {
+    width: 80%;
+  }
+  .rowBoat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .widgets {
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+  }
+  .saveButton {
+    display: none;
+  }
 }
