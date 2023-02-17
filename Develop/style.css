@@ -11,22 +11,22 @@
 }
 
 .widgets {
-  text-align: center;
   justify-content: center;
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
+
+/* .forecastTitle {
+  padding-bottom: 50px;
+  height: 60px;
+} */
 
 #map {
   position: relative;
-  top: 14%;
 }
 
-#mapText {
-  position: absolute;
-  top: auto;
-  left: auto;
-  text-align: center;
-}
 .searchDiv {
   width: 40%;
 }
